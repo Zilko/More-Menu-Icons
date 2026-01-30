@@ -59,6 +59,7 @@ void ProMenuGameLayer::updatePlayers(float dt) {
         }
 
         PlayerObject* player = PlayerObject::create(1, 1, nullptr, this, false);
+        player->setTag(12879384);
         player->addAllParticles();
 
         addChild(player, 60);
