@@ -1,5 +1,4 @@
-#include "KnownPlayers.h"
-
+#include "KnownPlayers.hpp"
 #include "PlayerObject.hpp"
 
 void ProPlayerObject::updateMenu(float dt, float deltaCount, bool videoOptionsOpen) {
@@ -103,9 +102,10 @@ void ProPlayerObject::reset(bool videoOptionsOpen) {
 
     if (geode::Loader::get()->isModLoaded("iandyhd3.known_players")) {
         auto event = known_players::events::NextIconModifyPlayerObject(this);
-        event.post();
+        event.send(this);
 
-        if (event.done) return;
+        // if (event.done) return;
+        return;
     }
 
     m_hasGlow = static_cast<float>(rand()) / RAND_MAX > 0.8f;

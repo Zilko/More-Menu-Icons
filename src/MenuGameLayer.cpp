@@ -95,7 +95,7 @@ bool ProMenuGameLayer::init() {
 
     updateTargetPlayers();
 
-    schedule(schedule_selector(ProMenuGameLayer::updatePlayers), 0, kCCRepeatForever, 0.1f);
+    schedule(schedule_selector(ProMenuGameLayer::updatePlayers), 0.02f, kCCRepeatForever, 0.1f);
 
     return true;
 }
